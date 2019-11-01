@@ -1,0 +1,14 @@
+release/huntdataaccess.o
+release/huntmodel.o
+release/loadgamewidget.o
+release/main.o
+release/huntwidget.o
+release/mainwidget.o
+release/newgame.o
+release/savegamewidget.o
+release/moc_huntmodel.o
+release/moc_huntwidget.o
+release/moc_loadgamewidget.o
+release/moc_mainwidget.o
+release/moc_newgame.o
+release/moc_savegamewidget.o

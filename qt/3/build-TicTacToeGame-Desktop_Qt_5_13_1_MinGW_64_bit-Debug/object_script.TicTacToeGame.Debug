@@ -1,0 +1,10 @@
+debug/main.o
+debug/tictactoewidget.o
+debug/tictactoemodel.o
+debug/savegamewidget.o
+debug/loadgamewidget.o
+debug/tictactoedataaccess.o
+debug/moc_tictactoewidget.o
+debug/moc_tictactoemodel.o
+debug/moc_savegamewidget.o
+debug/moc_loadgamewidget.o

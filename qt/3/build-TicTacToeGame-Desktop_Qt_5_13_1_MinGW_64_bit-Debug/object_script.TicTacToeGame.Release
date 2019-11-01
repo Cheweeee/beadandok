@@ -1,0 +1,10 @@
+release/main.o
+release/tictactoewidget.o
+release/tictactoemodel.o
+release/savegamewidget.o
+release/loadgamewidget.o
+release/tictactoedataaccess.o
+release/moc_tictactoewidget.o
+release/moc_tictactoemodel.o
+release/moc_savegamewidget.o
+release/moc_loadgamewidget.o

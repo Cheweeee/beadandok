@@ -1,0 +1,14 @@
+debug/huntdataaccess.o
+debug/huntmodel.o
+debug/loadgamewidget.o
+debug/main.o
+debug/huntwidget.o
+debug/mainwidget.o
+debug/newgame.o
+debug/savegamewidget.o
+debug/moc_huntmodel.o
+debug/moc_huntwidget.o
+debug/moc_loadgamewidget.o
+debug/moc_mainwidget.o
+debug/moc_newgame.o
+debug/moc_savegamewidget.o

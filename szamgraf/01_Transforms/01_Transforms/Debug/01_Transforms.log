@@ -1,0 +1,3 @@
+﻿  MyApp.cpp
+D:\Beadok\szamgraf\01_Transforms\01_Transforms\MyApp.cpp(30,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  01_Transforms.vcxproj -> D:\Beadok\szamgraf\01_Transforms\Debug\01_Transforms.exe
