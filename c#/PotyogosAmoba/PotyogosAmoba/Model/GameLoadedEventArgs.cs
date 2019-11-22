@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PotyogosAmoba.Model {
-    class GameLoadedEventArgs {
+    public class GameLoadedEventArgs {
         public TicTacToeDatas datas { get; set; }
 
         public GameLoadedEventArgs(TicTacToeDatas data) {

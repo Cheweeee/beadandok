@@ -5,10 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PotyogosAmoba.Model {
-    class GameOverEventArgs : EventArgs{
+    public class GameOverEventArgs : EventArgs{
         //0 döntetlen, 1 X nyert, 2 O nyert
         public string type { get; private set; }
-        public GameOverEventArgs(int t) {
+        public string direction { get; private set; }
+        public List<Coordinate> coords { get; private set; }
+
+        public GameOverEventArgs(int t, string dir, List<Coordinate> c) {
             switch (t) {
                 case 0:
                     type = "Tie!";
@@ -20,6 +23,8 @@ namespace PotyogosAmoba.Model {
                     type = "O won!";
                     break;
             }
+            direction = dir;
+            coords = c;
         }
     }
 }

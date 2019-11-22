@@ -1,0 +1,17 @@
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\bin\Debug\PotyogosAmoba.exe
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\bin\Debug\PotyogosAmoba.pdb
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\bin\Debug\PotyogosAmoba.exe.config
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\obj\Debug\UnitTestProject1.csprojAssemblyReference.cache
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.CoreCompileInputs.cache
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.CopyComplete
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+D:\beadandok\c#\PotyogosAmoba\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

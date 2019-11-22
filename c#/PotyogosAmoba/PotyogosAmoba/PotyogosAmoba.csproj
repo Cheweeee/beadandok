@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Coordinate.cs" />
     <Compile Include="Model\FieldChangedEventArgs.cs" />
     <Compile Include="Model\GameLoadedEventArgs.cs" />
     <Compile Include="Model\GameOverEventArgs.cs" />

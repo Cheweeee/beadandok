@@ -18,6 +18,8 @@ namespace PotyogosAmoba {
         private TicTacToeGameModel _model;
         private OpenFileDialog _openFileDialog;
         private SaveFileDialog _saveFileDialog;
+        private bool isWinner = false;
+        public int sajt;
 
 
         NewGameForm newgame;
@@ -87,6 +89,7 @@ namespace PotyogosAmoba {
                 _model._timer.Start();
                 xTimeText.Text = "0";
                 oTimeText.Text = "0";
+                isWinner = false;
             }
 
             
@@ -98,6 +101,8 @@ namespace PotyogosAmoba {
 
         private void GameOver(object sender, GameOverEventArgs e) {
             _model._timerOn = false;
+            isWinner = true;
+            _panel.Refresh();
             MessageBox.Show(e.type, "Game over");
             NewGame();
         }
@@ -130,15 +135,44 @@ namespace PotyogosAmoba {
             // a mezőtartalmak
             for (Int32 i = 0; i < _size; i++)
                 for (Int32 j = 0; j < _size; j++) {
-                    switch (_model.GetField(j,i)) {
-                        case 2:
-                            graphics.FillEllipse(Brushes.Blue, i * fieldWidth + fieldWidth/ 10, (j * fieldHeight + fieldHeight / 10), 8 * fieldWidth / 10, (8 * fieldHeight / 10));
-                            break;
-                        case 1:
-                            graphics.DrawLine(new Pen(Color.Red, _panel.Width / 100), i * fieldWidth + fieldWidth / 10, j * fieldHeight + fieldHeight / 10, i * fieldWidth + 9 * fieldWidth / 10, j * fieldHeight + 9 * fieldHeight / 10);
-                            graphics.DrawLine(new Pen(Color.Red, _panel.Width / 100), i * fieldWidth + 9 * fieldWidth / 10, j * fieldHeight + fieldHeight / 10, i * fieldWidth + fieldWidth / 10, j * fieldHeight + 9 * fieldHeight / 10);
-                            break;
+                    if (isWinner) {
+                        bool winner = false;
+                        if (_model.winningCoords != null) {
+                            for (int k = 0; !winner && k < _model.winningCoords.Count; ++k) {
+                                winner = (_model.winningCoords[k].x == j && _model.winningCoords[k].y == i);
+                            }
+                            switch (_model.GetField(j, i)) {
+                                case 2:
+                                    graphics.FillEllipse((winner ? Brushes.Yellow : Brushes.Blue), i * fieldWidth + fieldWidth / 10, (j * fieldHeight + fieldHeight / 10), 8 * fieldWidth / 10, (8 * fieldHeight / 10));
+                                    break;
+                                case 1:
+                                    graphics.DrawLine(new Pen((winner ? Color.Yellow : Color.Red), _panel.Width / 100), i * fieldWidth + fieldWidth / 10, j * fieldHeight + fieldHeight / 10, i * fieldWidth + 9 * fieldWidth / 10, j * fieldHeight + 9 * fieldHeight / 10);
+                                    graphics.DrawLine(new Pen((winner ? Color.Yellow : Color.Red), _panel.Width / 100), i * fieldWidth + 9 * fieldWidth / 10, j * fieldHeight + fieldHeight / 10, i * fieldWidth + fieldWidth / 10, j * fieldHeight + 9 * fieldHeight / 10);
+                                    break;
+                            }
+                        } else {
+                            switch (_model.GetField(j, i)) {
+                                case 2:
+                                    graphics.FillEllipse(Brushes.Blue, i * fieldWidth + fieldWidth / 10, (j * fieldHeight + fieldHeight / 10), 8 * fieldWidth / 10, (8 * fieldHeight / 10));
+                                    break;
+                                case 1:
+                                    graphics.DrawLine(new Pen(Color.Red, _panel.Width / 100), i * fieldWidth + fieldWidth / 10, j * fieldHeight + fieldHeight / 10, i * fieldWidth + 9 * fieldWidth / 10, j * fieldHeight + 9 * fieldHeight / 10);
+                                    graphics.DrawLine(new Pen(Color.Red, _panel.Width / 100), i * fieldWidth + 9 * fieldWidth / 10, j * fieldHeight + fieldHeight / 10, i * fieldWidth + fieldWidth / 10, j * fieldHeight + 9 * fieldHeight / 10);
+                                    break;
+                            }
+                        }
+                        } else {
+                        switch (_model.GetField(j,i)) {
+                            case 2:
+                                graphics.FillEllipse(Brushes.Blue, i * fieldWidth + fieldWidth/ 10, (j * fieldHeight + fieldHeight / 10), 8 * fieldWidth / 10, (8 * fieldHeight / 10));
+                                break;
+                            case 1:
+                                graphics.DrawLine(new Pen(Color.Red, _panel.Width / 100), i * fieldWidth + fieldWidth / 10, j * fieldHeight + fieldHeight / 10, i * fieldWidth + 9 * fieldWidth / 10, j * fieldHeight + 9 * fieldHeight / 10);
+                                graphics.DrawLine(new Pen(Color.Red, _panel.Width / 100), i * fieldWidth + 9 * fieldWidth / 10, j * fieldHeight + fieldHeight / 10, i * fieldWidth + fieldWidth / 10, j * fieldHeight + 9 * fieldHeight / 10);
+                                break;
+                        }
                     }
+                    
                 }
 
             e.Graphics.DrawImage(bitmap, 0, 0);

@@ -9,7 +9,7 @@ using PotyogosAmoba.Persistence;
 using System.Timers;
 
 namespace PotyogosAmoba.Model {
-    class TicTacToeGameModel {
+    public class TicTacToeGameModel {
         #region variables
 
         //0 nobody, 1 X, 2 O
@@ -22,6 +22,7 @@ namespace PotyogosAmoba.Model {
         public int _oTime { get; set; }
         public Timer _timer { get; set; }
         public bool _timerOn { get; set; }
+        public List<Coordinate> winningCoords { get; set; }
 
         public event EventHandler<FieldChangedEventArgs> FieldChanged;
         public event EventHandler<GameOverEventArgs> GameOver;
@@ -63,6 +64,9 @@ namespace PotyogosAmoba.Model {
             _placed = 0;
             _xTime = 0;
             _oTime = 0;
+            if (winningCoords != null) {
+                winningCoords.Clear();
+            }
         }
         public void StepGame(int x, int y) {
             int place = _tableSize - 1;
@@ -84,44 +88,52 @@ namespace PotyogosAmoba.Model {
         public void CheckGame(int x, int y) {
             if (_placed == _tableSize * _tableSize) {
                 FieldChanged?.Invoke(this, new FieldChangedEventArgs(x, y));
-                GameOver?.Invoke(this, new GameOverEventArgs(0));
-            } else if (CheckFour(x, y)) {
-                FieldChanged?.Invoke(this, new FieldChangedEventArgs(x, y));
-                GameOver?.Invoke(this, new GameOverEventArgs(_currentPlayer));
+                GameOver?.Invoke(this, new GameOverEventArgs(0, "", new List<Coordinate>()));
+            } else {
+                List<Coordinate> c;
+                string winDir = CheckFour(x, y, out c);  //hor, ltop, rtop
+                c.Add(new Coordinate(x, y));
+                if (winDir != "") {
+                    winningCoords = c;
+                    FieldChanged?.Invoke(this, new FieldChangedEventArgs(x, y));
+                    GameOver?.Invoke(this, new GameOverEventArgs(_currentPlayer, winDir, winningCoords));
+                }
             }
         }
 
-        private bool CheckFour(int x, int y) {
+        private string CheckFour(int x, int y, out List<Coordinate> c) {
             int count = 0;
             int i = x;
             int j = y;
+            c = new List<Coordinate>();
+            c.Clear();
 
-            //Vertical
-            while (i >= 0 && _tableMatrix[i, j] == _tableMatrix[x, y]) {
-                if (i != x || j != y) {
-                    ++count;
-                }
-                --i;
-            }
-            i = x;
-            j = y;
-            while (i < _tableSize && _tableMatrix[i, j] == _tableMatrix[x, y]) {
+            ////Vertical
+            //while (i >= 0 && _tableMatrix[i, j] == _tableMatrix[x, y]) {
+            //    if (i != x || j != y) {
+            //        ++count;
+            //    }
+            //    --i;
+            //}
+            //i = x;
+            //j = y;
+            //while (i < _tableSize && _tableMatrix[i, j] == _tableMatrix[x, y]) {
 
-                if (i != x || j != y) {
-                    ++count;
-                }
-                ++i;
-            }
-            if (count >= 3) {
-                return true;
-            }
-            count = 0;
+            //    if (i != x || j != y) {
+            //        ++count;
+            //    }
+            //    ++i;
+            //}
+            //if (count >= 3) {
+            //    return "vert";
+            //}
+            //count = 0;
             //Horizontal
             i = x;
             j = y;
             while (j >= 0 && _tableMatrix[i, j] == _tableMatrix[x, y]) {
-
                 if (i != x || j != y) {
+                    c.Add(new Coordinate(i,j));
                     ++count;
                 }
                 --j;
@@ -129,21 +141,23 @@ namespace PotyogosAmoba.Model {
             i = x;
             j = y;
             while (j < _tableSize && _tableMatrix[i, j] == _tableMatrix[x, y]) {
-
                 if (i != x || j != y) {
+                    c.Add(new Coordinate(i, j));
                     ++count;
                 }
                 ++j;
             }
             if (count >= 3) {
-                return true;
+                return "hor";
             }
             count = 0;
+            c.Clear();
             //Diagonal left top to right bot
             i = x;
             j = y;
             while (j < _tableSize && i < _tableSize && _tableMatrix[i, j] == _tableMatrix[x, y]) {
                 if (i != x || j != y) {
+                    c.Add(new Coordinate(i,j));
                     ++count;
                 }
                 ++j;
@@ -153,15 +167,17 @@ namespace PotyogosAmoba.Model {
             j = y;
             while (j >= 0 && i >= 0 && _tableMatrix[i, j] == _tableMatrix[x, y]) {
                 if (i != x || j != y) {
+                    c.Add(new Coordinate(i,j));
                     ++count;
                 }
                 --j;
                 --i;
             }
             if (count >= 3) {
-                return true;
+                return "ltop";
             }
             count = 0;
+            c.Clear();
             //Diagonal left bot to right top
             i = x;
             j = y;
@@ -176,18 +192,21 @@ namespace PotyogosAmoba.Model {
             j = y;
             while (j >= 0 && i < _tableSize && _tableMatrix[i, j] == _tableMatrix[x, y]) {
                 if (i != x || j != y) {
+                    c.Add(new Coordinate(i,j));
                     ++count;
                 }
                 --j;
                 ++i;
             }
-
-            return count >= 3;
+            if (count >= 3) {
+                return "rop";
+            }
+            return "";
         }
 
-        public void LoadGame(String path) {
+        public bool LoadGame(String path) {
             if (_persistence == null)
-                return;
+                return false;
 
             // végrehajtjuk a betöltést
             TicTacToeDatas values = _persistence.Load(path);
@@ -195,15 +214,16 @@ namespace PotyogosAmoba.Model {
             //if (values.tableSize != _tableSize)
             //    throw new Exception("Error occured during game loading.");
             GameLoaded?.Invoke(this, new GameLoadedEventArgs(values));
+            return true;
         }
 
         /// <summary>
         /// Játék mentése.
         /// </summary>
         /// <param name="path">Elérési útvonal.</param>
-        public void SaveGame(String path) {
+        public bool SaveGame(String path) {
             if (_persistence == null)
-                return;
+                return false;
 
             // az értékeket kimásoljuk egy új tömbbe
             TicTacToeDatas values = new TicTacToeDatas();
@@ -217,6 +237,7 @@ namespace PotyogosAmoba.Model {
 
             // végrehajtjuk a mentést
             _persistence.Save(path, values);
+            return true;
         }
     }
 }

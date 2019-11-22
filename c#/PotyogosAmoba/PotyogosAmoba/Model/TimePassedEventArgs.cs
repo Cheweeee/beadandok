@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace PotyogosAmoba.Model {
-    class TimePassedEventArgs {
+    public class TimePassedEventArgs {
         public int xTime { get; set; }
         public int oTime { get; set; }
 

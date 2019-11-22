@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 
 namespace PotyogosAmoba.Model {
-    class FieldChangedEventArgs : EventArgs {
+    public class FieldChangedEventArgs : EventArgs {
         public int changedX { get; private set; }
         public int changedY { get; private set; }
 
