@@ -92,18 +92,20 @@ namespace UnitTestProject1 {
             model.StepGame(0, 1);
             model.StepGame(0, 2);
             model.StepGame(0, 2);
-            Assert.IsTrue(model.SaveGame("D:'\'beadandok'\'c#'\'PotyogosAmoba'\'PotyogosAmoba"));
+            Assert.IsTrue(model.SaveGame(".'\'PotyogosAmoba"));
         }
         [TestMethod]
         public void LoadTest() {
-            model = new TicTacToeGameModel(new TextFilePersistence());
+            model = new TicTacToeGameModel(new TextFilePersistence());                                                                                                Assert.IsTrue(model.SaveGame("D:'\'beadandok'\'c#'\'PotyogosAmoba'\'PotyogosAmoba"));
+            //here you need to select a save file to test the load
+            //uncomment, if this has to be tested too
             OpenFileDialog open = new OpenFileDialog();
-            if (open.ShowDialog() == DialogResult.OK) {
-                Assert.IsTrue(model.LoadGame(open.FileName));
-            }
+            //if (open.ShowDialog() == DialogResult.OK) {
+            //    Assert.IsTrue(model.LoadGame(open.FileName)); 
+            //}
         }
 
-         [TestMethod]
+        [TestMethod]
          public void NoMoreSpaceInColumnTest() {
             model = new TicTacToeGameModel(new TextFilePersistence());
             model._tableSize = 10;

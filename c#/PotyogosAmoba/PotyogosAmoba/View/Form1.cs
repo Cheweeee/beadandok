@@ -14,12 +14,10 @@ using ELTE.TicTacToeGame.Persistence;
 
 namespace PotyogosAmoba {
     public partial class Form1 : Form {
-        //private ITicTacToeDataAccess _dataAccess; // adatelérés
         private TicTacToeGameModel _model;
         private OpenFileDialog _openFileDialog;
         private SaveFileDialog _saveFileDialog;
         private bool isWinner = false;
-        public int sajt;
 
 
         NewGameForm newgame;

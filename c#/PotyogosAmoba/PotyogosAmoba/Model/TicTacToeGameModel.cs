@@ -217,10 +217,6 @@ namespace PotyogosAmoba.Model {
             return true;
         }
 
-        /// <summary>
-        /// Játék mentése.
-        /// </summary>
-        /// <param name="path">Elérési útvonal.</param>
         public bool SaveGame(String path) {
             if (_persistence == null)
                 return false;
