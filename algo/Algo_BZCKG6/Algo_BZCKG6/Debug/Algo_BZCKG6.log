@@ -1,0 +1,6 @@
+﻿  Algo_BZCKG6.cpp
+D:\Beadok\beadandok\algo\Algo_BZCKG6\Algo_BZCKG6\Algo_BZCKG6.cpp(65,21): warning C4018: '<': signed/unsigned mismatch
+D:\Beadok\beadandok\algo\Algo_BZCKG6\Algo_BZCKG6\Algo_BZCKG6.cpp(92,16): warning C4018: '>=': signed/unsigned mismatch
+D:\Beadok\beadandok\algo\Algo_BZCKG6\Algo_BZCKG6\Algo_BZCKG6.cpp(92,38): warning C4018: '>=': signed/unsigned mismatch
+D:\Beadok\beadandok\algo\Algo_BZCKG6\Algo_BZCKG6\Algo_BZCKG6.cpp(60): warning C4715: 'containsQueue': not all control paths return a value
+  Algo_BZCKG6.vcxproj -> D:\Beadok\beadandok\algo\Algo_BZCKG6\Debug\Algo_BZCKG6.exe
