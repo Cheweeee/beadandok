@@ -52,10 +52,10 @@
     <Compile Include="Model\GameOverEventArgs.cs" />
     <Compile Include="Model\TicTacToeGameModel.cs" />
     <Compile Include="Model\TimePassedEventArgs.cs" />
-    <Compile Include="NewGameForm.cs">
+    <Compile Include="View\NewGameForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewGameForm.Designer.cs">
+    <Compile Include="View\NewGameForm.Designer.cs">
       <DependentUpon>NewGameForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Persistence\TextFilePersistence.cs" />
@@ -71,7 +71,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="NewGameForm.resx">
+    <EmbeddedResource Include="View\NewGameForm.resx">
       <DependentUpon>NewGameForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Form1.resx">

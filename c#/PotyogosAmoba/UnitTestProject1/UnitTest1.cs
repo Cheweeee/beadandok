@@ -101,7 +101,7 @@ namespace UnitTestProject1 {
             //uncomment, if this has to be tested too
             OpenFileDialog open = new OpenFileDialog();
             //if (open.ShowDialog() == DialogResult.OK) {
-            //    Assert.IsTrue(model.LoadGame(open.FileName)); 
+            //    Assert.IsTrue(model.LoadGame(open.FileName));
             //}
         }
 
