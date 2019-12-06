@@ -1,0 +1,11 @@
+D:\beadandok\c#\PotyogosAmoba\PotyogosAmoba\bin\Debug\PotyogosAmoba.exe.config
+D:\beadandok\c#\PotyogosAmoba\PotyogosAmoba\bin\Debug\PotyogosAmoba.exe
+D:\beadandok\c#\PotyogosAmoba\PotyogosAmoba\bin\Debug\PotyogosAmoba.pdb
+D:\beadandok\c#\PotyogosAmoba\PotyogosAmoba\obj\Debug\PotyogosAmoba.csprojAssemblyReference.cache
+D:\beadandok\c#\PotyogosAmoba\PotyogosAmoba\obj\Debug\PotyogosAmoba.NewGameForm.resources
+D:\beadandok\c#\PotyogosAmoba\PotyogosAmoba\obj\Debug\PotyogosAmoba.Form1.resources
+D:\beadandok\c#\PotyogosAmoba\PotyogosAmoba\obj\Debug\PotyogosAmoba.Properties.Resources.resources
+D:\beadandok\c#\PotyogosAmoba\PotyogosAmoba\obj\Debug\PotyogosAmoba.csproj.GenerateResource.cache
+D:\beadandok\c#\PotyogosAmoba\PotyogosAmoba\obj\Debug\PotyogosAmoba.csproj.CoreCompileInputs.cache
+D:\beadandok\c#\PotyogosAmoba\PotyogosAmoba\obj\Debug\PotyogosAmoba.exe
+D:\beadandok\c#\PotyogosAmoba\PotyogosAmoba\obj\Debug\PotyogosAmoba.pdb

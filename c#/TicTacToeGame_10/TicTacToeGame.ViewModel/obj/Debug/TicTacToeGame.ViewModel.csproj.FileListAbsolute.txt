@@ -1,0 +1,11 @@
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.ViewModel\bin\Debug\TicTacToeGame.ViewModel.dll
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.ViewModel\bin\Debug\TicTacToeGame.ViewModel.pdb
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.ViewModel\bin\Debug\TicTacToeGame.Model.dll
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.ViewModel\bin\Debug\TicTacToeGame.Persistence.dll
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.ViewModel\bin\Debug\TicTacToeGame.Model.pdb
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.ViewModel\bin\Debug\TicTacToeGame.Persistence.pdb
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.ViewModel\obj\Debug\TicTacToeGame.ViewModel.csprojAssemblyReference.cache
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.ViewModel\obj\Debug\TicTacToeGame.ViewModel.csproj.CoreCompileInputs.cache
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.ViewModel\obj\Debug\TicTacToeGame.ViewModel.csproj.CopyComplete
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.ViewModel\obj\Debug\TicTacToeGame.ViewModel.dll
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.ViewModel\obj\Debug\TicTacToeGame.ViewModel.pdb

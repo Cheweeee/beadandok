@@ -1,0 +1,9 @@
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.Persistence.Text\bin\Debug\TicTacToeGame.Persistence.Text.dll
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.Persistence.Text\bin\Debug\TicTacToeGame.Persistence.Text.pdb
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.Persistence.Text\bin\Debug\TicTacToeGame.Persistence.dll
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.Persistence.Text\bin\Debug\TicTacToeGame.Persistence.pdb
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.Persistence.Text\obj\Debug\TicTacToeGame.Persistence.Text.csprojAssemblyReference.cache
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.Persistence.Text\obj\Debug\TicTacToeGame.Persistence.Text.csproj.CoreCompileInputs.cache
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.Persistence.Text\obj\Debug\TicTacToeGame.Persistence.Text.csproj.CopyComplete
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.Persistence.Text\obj\Debug\TicTacToeGame.Persistence.Text.dll
+D:\beadandok\c#\TicTacToeGame_10\TicTacToeGame.Persistence.Text\obj\Debug\TicTacToeGame.Persistence.Text.pdb
