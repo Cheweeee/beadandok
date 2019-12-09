@@ -11,19 +11,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Diagnostics;
+using PotyogosAmobaWPF.Persistence;
 
 namespace PotyogosAmobaWPF {
         /// <summary>
     /// Alkalmazás típusa.
     /// </summary>
     public partial class App : Application {
-        private TextFilePersistence _dataAccess;
+        private DBPersistence _dataAccess;
         private ITicTacToeModel _model;
         private TicTacToeViewModel _viewModel;
         private MainGameWindow _window;
         private NewGameWindow _newGame;
         private OpenFileDialog _openFileDialog;
         private SaveFileDialog _saveFileDialog;
+        private LoadWindow _loadWindow;
+        private SaveWindow _saveWindow;
 
         /// <summary>
         /// Alkalmazás példányosítása.
@@ -36,7 +39,7 @@ namespace PotyogosAmobaWPF {
         /// Alkalmazás indulásának eseménykezelője.
         /// </summary>
         private void App_Startup(object sender, StartupEventArgs e) {
-            _dataAccess = new TextFilePersistence();
+            _dataAccess = new DBPersistence();
 
             _newGame = new NewGameWindow();
 
@@ -98,38 +101,49 @@ namespace PotyogosAmobaWPF {
         /// Játék betöltésének eseménykezelője.
         /// </summary>
         private async void ViewModel_LoadGame(object sender, System.EventArgs e) {
-            if (_openFileDialog == null) {
-                _openFileDialog = new OpenFileDialog();
-                _openFileDialog.Title = "Tic-Tac-Toe - Load Game";
-                //_openFileDialog.Filter = "Szövegfájlok|*.txt";
-            }
+            //if (_openFileDialog == null) {
+            //    _openFileDialog = new OpenFileDialog();
+            //    _openFileDialog.Title = "Tic-Tac-Toe - Load Game";
+            //    //_openFileDialog.Filter = "Szövegfájlok|*.txt";
+            //}
 
-            // nyithatunk új nézetet
-            if (_openFileDialog.ShowDialog() == true) {
-                try { 
-                _model.LoadGame(_openFileDialog.FileName); // játék betöltése
-                } catch (Exception) {
-                    MessageBox.Show("An error occured during loading", "Tic-Tac-Toe", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+            //// nyithatunk új nézetet
+            //if (_openFileDialog.ShowDialog() == true) {
+            //    try { 
+            //    _model.LoadGame(_openFileDialog.FileName); // játék betöltése
+            //    } catch (Exception) {
+            //        MessageBox.Show("An error occured during loading", "Tic-Tac-Toe", MessageBoxButton.OK, MessageBoxImage.Error);
+            //    }
+            //}
+            _loadWindow = new LoadWindow(_dataAccess.GetList());
+            _loadWindow.ShowDialog();
+            if (_loadWindow.DialogResult.GetValueOrDefault(true)) {
+                _model.LoadGame(_loadWindow.saveName);
             }
         }
         /// <summary>
         /// Játék mentésének eseménykezelője.
         /// </summary>
         private async void ViewModel_SaveGame(object sender, System.EventArgs e) {
-            if (_saveFileDialog == null) {
-                _saveFileDialog = new SaveFileDialog();
-                _saveFileDialog.Title = "Tic-Tac-Toe - Save Game";
-                //_saveFileDialog.Filter = "Szövegfájlok|*.txt";
+            //if (_saveFileDialog == null) {
+            //    _saveFileDialog = new SaveFileDialog();
+            //    _saveFileDialog.Title = "Tic-Tac-Toe - Save Game";
+            //    //_saveFileDialog.Filter = "Szövegfájlok|*.txt";
+            //}
+
+            //if (_saveFileDialog.ShowDialog() == true) {
+            //    try {
+            //        _model.SaveGame(_saveFileDialog.FileName); // játék mentése
+            //    } catch (Exception) {
+            //        MessageBox.Show("An error occured during saving", "Tic-Tac-Toe", MessageBoxButton.OK, MessageBoxImage.Error);
+            //    }
+            //}
+            _saveWindow = new SaveWindow();
+            _saveWindow.ShowDialog();
+            if (_saveWindow.DialogResult.GetValueOrDefault(true)) {
+                _model.SaveGame(_saveWindow.Answer);
             }
 
-            if (_saveFileDialog.ShowDialog() == true) {
-                try {
-                    _model.SaveGame(_saveFileDialog.FileName); // játék mentése
-                } catch (Exception) {
-                    MessageBox.Show("An error occured during saving", "Tic-Tac-Toe", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-            }
         }
         /// <summary>
         /// Kilépés eseménykezelője.

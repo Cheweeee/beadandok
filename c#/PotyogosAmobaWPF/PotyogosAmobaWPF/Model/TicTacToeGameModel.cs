@@ -9,6 +9,7 @@ using ELTE.TicTacToeGame.Persistence;
 using PotyogosAmoba.Persistence;
 using PotyogosAmobaWPF.Model;
 using System.Windows.Threading;
+using PotyogosAmobaWPF.Persistence;
 
 namespace PotyogosAmoba.Model {
     public class TicTacToeGameModel : ITicTacToeModel {
@@ -19,7 +20,7 @@ namespace PotyogosAmoba.Model {
         public int _tableSize { get; set; }
         public int _currentPlayer { get; set; }
         public int _placed { get; set; }
-        private TextFilePersistence _persistence;
+        private DBPersistence _persistence;
         public int _xTime { get; set; }
         public int _oTime { get; set; }
         public DispatcherTimer _timer { get; set; }
@@ -33,7 +34,7 @@ namespace PotyogosAmoba.Model {
         public event EventHandler<GameStartedEventArgs> GameStarted;
         #endregion
 
-        public TicTacToeGameModel(TextFilePersistence pers) {
+        public TicTacToeGameModel(DBPersistence pers) {
             _persistence = pers;
             //timer
             _timer = new DispatcherTimer();

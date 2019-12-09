@@ -17,3 +17,12 @@ D:\beadandok\c#\PotyogosAmobaWPF\PotyogosAmobaWPF\obj\Debug\View\MainGameWindow.
 D:\beadandok\c#\PotyogosAmobaWPF\PotyogosAmobaWPF\obj\Debug\View\MainGameWindow.baml
 D:\beadandok\c#\PotyogosAmobaWPF\PotyogosAmobaWPF\obj\Debug\View\NewGameWindow.g.cs
 D:\beadandok\c#\PotyogosAmobaWPF\PotyogosAmobaWPF\obj\Debug\View\NewGameWindow.baml
+D:\beadandok\c#\PotyogosAmobaWPF\PotyogosAmobaWPF\bin\Debug\EntityFramework.dll
+D:\beadandok\c#\PotyogosAmobaWPF\PotyogosAmobaWPF\bin\Debug\EntityFramework.SqlServer.dll
+D:\beadandok\c#\PotyogosAmobaWPF\PotyogosAmobaWPF\bin\Debug\EntityFramework.xml
+D:\beadandok\c#\PotyogosAmobaWPF\PotyogosAmobaWPF\bin\Debug\EntityFramework.SqlServer.xml
+D:\beadandok\c#\PotyogosAmobaWPF\PotyogosAmobaWPF\obj\Debug\PotyogosAmobaWPF.csproj.CopyComplete
+D:\beadandok\c#\PotyogosAmobaWPF\PotyogosAmobaWPF\obj\Debug\View\LoadWindow.g.cs
+D:\beadandok\c#\PotyogosAmobaWPF\PotyogosAmobaWPF\obj\Debug\View\SaveWindow.g.cs
+D:\beadandok\c#\PotyogosAmobaWPF\PotyogosAmobaWPF\obj\Debug\View\LoadWindow.baml
+D:\beadandok\c#\PotyogosAmobaWPF\PotyogosAmobaWPF\obj\Debug\View\SaveWindow.baml

@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Diagnostics;
 using PotyogosAmobaWPF.Model;
+using System.Collections.Generic;
 
 namespace ELTE.TicTacToeGame.ViewModel
 {
@@ -54,6 +55,7 @@ namespace ELTE.TicTacToeGame.ViewModel
                 OnPropertyChanged();
             }
         }
+
 
 
         #endregion
@@ -123,6 +125,7 @@ namespace ELTE.TicTacToeGame.ViewModel
             _model._tableSize = TableSize;
             _model.NewGame();
             _model.GameStarted += new EventHandler<GameStartedEventArgs>(Model_GameStarted);
+            _model.GameLoaded += Model_GameLoaded;
             _model.FieldChanged += new EventHandler<FieldChangedEventArgs>(Model_FieldChanged);
             _model.GameOver += new EventHandler<GameOverEventArgs>(Model_GameOver);
             _model.TimePassed += new EventHandler<TimePassedEventArgs>(Model_TimePassed);
@@ -138,6 +141,21 @@ namespace ELTE.TicTacToeGame.ViewModel
 
             // játéktábla létrehozása
             Fields = new ObservableCollection<TicTacToeField>();
+            Refresh();
+        }
+
+        private void Model_GameLoaded(object sender, GameLoadedEventArgs e) {
+            _model._tableSize = e.datas.tableSize;
+            _model._currentPlayer = e.datas.currentPlayer;
+            _model._oTime = e.datas.oTime;
+            _model._xTime = e.datas.xTime;
+            _model._placed = e.datas.placed;
+            _model._tableMatrix = new int[_model._tableSize, _model._tableSize];
+            for(int i = 0; i < _model._tableSize; ++i) {
+                for (int j = 0; j < _model._tableSize; j++) {
+                    _model._tableMatrix[i, j] = e.datas.table[i, j];
+                }
+            }
             Refresh();
         }
 
